@@ -1,0 +1,185 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom animations and 3D effects */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium;
+  }
+  
+  .mobile-nav-link {
+    @apply block py-3 text-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200;
+  }
+  
+  .stat-card {
+    @apply text-center p-4 bg-gray-50 dark:bg-gray-700 rounded-lg;
+  }
+  
+  .skill-card {
+    @apply bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2;
+  }
+  
+  .skill-icon {
+    @apply text-center mb-4;
+  }
+  
+  .skill-bar {
+    @apply w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 relative overflow-hidden;
+  }
+  
+  .skill-progress {
+    @apply h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-1000 ease-out;
+    animation: fillBar 2s ease-out forwards;
+  }
+  
+  .cta-button {
+    @apply inline-flex items-center justify-center;
+  }
+  
+  .floating-shape {
+    animation-delay: var(--delay, 0s);
+  }
+}
+
+@layer utilities {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .hero-content {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glass-effect {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Custom Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: inherit;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* 3D Effects */
+.skill-card:hover {
+  transform: translateY(-8px) rotateX(5deg);
+}
+
+.floating-shape:nth-child(1) { --delay: 0s; }
+.floating-shape:nth-child(2) { --delay: 0.5s; }
+.floating-shape:nth-child(3) { --delay: 1s; }
+.floating-shape:nth-child(4) { --delay: 1.5s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    @apply text-3xl;
+  }
+  
+  .hero-content h1 {
+    @apply text-4xl;
+  }
+  
+  .hero-content h2 {
+    @apply text-xl;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #5a6fd8, #6a42a0);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}

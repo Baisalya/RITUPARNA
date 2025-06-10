@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rituparna - Java Full Stack Developer</title>
+    <meta name="description" content="Rituparna's portfolio - Java Full Stack Developer specializing in cloud architecture and software development">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900 transition-all duration-500">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-gray-900/80">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Rituparna
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#achievements" class="nav-link">Achievements</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
+              <i class="fas fa-sun dark:hidden"></i>
+              <i class="fas fa-moon hidden dark:inline"></i>
+            </button>
+            <button id="mobile-menu" class="md:hidden p-2">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu-panel" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+      <div class="flex h-full">
+        <div class="flex-1 bg-black/50" id="mobile-menu-overlay"></div>
+        <div class="w-80 bg-white dark:bg-gray-900 p-6">
+          <div class="flex justify-between items-center mb-8">
+            <h3 class="text-xl font-bold">Menu</h3>
+            <button id="close-mobile-menu" class="p-2">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <nav class="space-y-4">
+            <a href="#home" class="mobile-nav-link">Home</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#experience" class="mobile-nav-link">Experience</a>
+            <a href="#education" class="mobile-nav-link">Education</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#achievements" class="mobile-nav-link">Achievements</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      <!-- 3D Background Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="floating-shape absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full animate-float opacity-20"></div>
+        <div class="floating-shape absolute top-40 right-20 w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 transform rotate-45 animate-bounce-slow opacity-20"></div>
+        <div class="floating-shape absolute bottom-40 left-20 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full animate-pulse-slow opacity-20"></div>
+        <div class="floating-shape absolute bottom-20 right-40 w-24 h-24 bg-gradient-to-br from-yellow-400 to-red-500 transform rotate-12 animate-rotate-slow opacity-20"></div>
+      </div>
+
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="hero-content transform translate-y-8 opacity-0">
+          <!-- Avatar with Animated Emojis -->
+          <div class="relative mb-8 inline-block">
+            <div class="w-48 h-48 mx-auto relative">
+              <img src="https://avatars.githubusercontent.com/u/106543207?v=4" 
+                   alt="Rituparna's Profile" 
+                   class="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-2xl">
+              <!-- Animated Emojis -->
+              <div class="absolute -top-2 -right-2 text-2xl animate-bounce">💻</div>
+              <div class="absolute -bottom-2 -left-2 text-2xl animate-wiggle">☕</div>
+              <div class="absolute top-4 -left-4 text-xl animate-pulse-slow">🚀</div>
+              <div class="absolute bottom-4 -right-4 text-xl animate-float">⚡</div>
+            </div>
+          </div>
+
+          <h1 class="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
+            Rituparna
+          </h1>
+          <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8">
+            Java Full Stack Developer
+          </h2>
+          <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-3xl mx-auto">
+            Passionate about building scalable applications with expertise in Java, Spring Boot, cloud architecture, and modern web technologies. Turning ideas into robust software solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/public/Rituparna_Parija_Resume.pdf" download>
+              <button class="cta-button bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg">
+                <i class="fas fa-download mr-2"></i>Download Resume
+              </button>
+            </a>
+            
+            
+            <button class="cta-button border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transform transition-all duration-300">
+              <i class="fas fa-envelope mr-2"></i>Get In Touch
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-500">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">Get to know me better</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="animate-on-scroll">
+            <h3 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Hello! I'm Rituparna</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+               An associate software engineer with a strong foundation in Java Full Stack development, 
+               cloud technologies, and software architecture. Passionate about building efficient, scalable, and innovative solutions.
+            </p>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              My expertise spans across the entire development lifecycle, from system architecture and database design 
+              to frontend development and deployment. I'm particularly interested in microservices architecture, 
+              cloud-native applications, and DevOps practices.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="stat-card">
+                <h4 class="text-2xl font-bold text-blue-600">16+</h4>
+                <p class="text-gray-600 dark:text-gray-400">Months Experience</p>
+              </div>
+              <div class="stat-card">
+                <h4 class="text-2xl font-bold text-green-600">50+</h4>
+                <p class="text-gray-600 dark:text-gray-400">Projects Completed</p>
+              </div>
+              <div class="stat-card">
+                <h4 class="text-2xl font-bold text-purple-600">15+</h4>
+                <p class="text-gray-600 dark:text-gray-400">Technologies</p>
+              </div>
+              <div class="stat-card">
+                <h4 class="text-2xl font-bold text-red-600">10+</h4>
+                <p class="text-gray-600 dark:text-gray-400">Certifications</p>
+              </div>
+            </div>
+          </div>
+          <div class="animate-on-scroll">
+            <div class="relative">
+              <div class="w-full h-96 bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl transform rotate-3 absolute"></div>
+              <img src="https://code.visualstudio.com/assets/docs/java/java-webapp/run-spring-boot.gif?auto=compress&cs=tinysrgb&w=600" 
+                   alt="Coding workspace" 
+                   class="w-full h-96 object-cover rounded-2xl relative z-10 shadow-2xl">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-500">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="section-title">Special Skills</h2>
+          <p class="section-subtitle">My core competencies</p>
+        </div>
+    
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+          
+          <!-- Backend Development -->
+          <div class="flex flex-col h-full">
+            <div class="bg-gradient-to-br from-pink-500 to-red-600 p-8 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 text-white relative overflow-hidden h-full flex flex-col justify-between">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+              <div class="relative z-10 flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-server text-2xl mr-4"></i>
+                  <h3 class="text-xl font-semibold">Backend Development</h3>
+                </div>
+                <p class="text-sm mb-6">Experienced in building scalable and efficient backend solutions using Java and Spring Boot, following microservices architecture.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Java</span>
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Spring Boot</span>
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">REST APIs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Frontend Technologies -->
+          <div class="flex flex-col h-full">
+            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-8 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 text-white relative overflow-hidden h-full flex flex-col justify-between">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+              <div class="relative z-10 flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-laptop-code text-2xl mr-4"></i>
+                  <h3 class="text-xl font-semibold">Frontend Technologies</h3>
+                </div>
+                <p class="text-sm mb-6">Proficient in creating dynamic and responsive web applications with modern frontend frameworks.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">React</span>
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">HTML/CSS</span>
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">JavaScript</span>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Cloud Technologies -->
+          <div class="flex flex-col h-full">
+            <div class="bg-gradient-to-br from-teal-500 to-green-600 p-8 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 text-white relative overflow-hidden h-full flex flex-col justify-between">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+              <div class="relative z-10 flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-cloud text-2xl mr-4"></i>
+                  <h3 class="text-xl font-semibold">Cloud Technologies</h3>
+                </div>
+                <p class="text-sm mb-6">Knowledgeable in cloud computing, containerization, and deployment strategies using AWS, Docker, and Kubernetes.</p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">AWS</span>
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Docker</span>
+                  <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Kubernetes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+    
+
+        <!-- Technical Skills -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+        <div class="container mx-auto px-6">
+        <div class="mb-16">
+          <div class="text-center mb-16">
+            <h2 class="section-title">Technical Expertise</h2>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="skill-card animate-on-scroll">
+              <div class="skill-icon">
+                <i class="fab fa-java text-4xl text-red-600"></i>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Java & Spring</h4>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">Expert in Java, Spring Boot, Spring Security, JPA/Hibernate</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            
+            <div class="skill-card animate-on-scroll">
+              <div class="skill-icon">
+                <i class="fas fa-cloud text-4xl text-blue-600"></i>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Cloud & DevOps</h4>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">AWS, Docker, Kubernetes, CI/CD, Microservices</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            
+            <div class="skill-card animate-on-scroll">
+              <div class="skill-icon">
+                <i class="fas fa-database text-4xl text-green-600"></i>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Database</h4>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">MySQL, PostgreSQL, MongoDB, Redis</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+            </div>
+            
+            <div class="skill-card animate-on-scroll">
+              <div class="skill-icon">
+                <i class="fab fa-js-square text-4xl text-yellow-600"></i>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Frontend</h4>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">React, Angular, TypeScript, HTML5, CSS3</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            
+            <div class="skill-card animate-on-scroll">
+              <div class="skill-icon">
+                <i class="fas fa-sitemap text-4xl text-purple-600"></i>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Architecture</h4>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">System Design, Microservices, Design Patterns</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 92%"></div>
+              </div>
+            </div>
+            
+            <div class="skill-card animate-on-scroll">
+              <div class="skill-icon">
+                <i class="fas fa-tools text-4xl text-orange-600"></i>
+              </div>
+              <h4 class="text-xl font-semibold mb-2">Tools & Testing</h4>
+              <p class="text-gray-600 dark:text-gray-400 mb-4">Git, Maven, JUnit, Mockito, SonarQube</p>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 87%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section  -->
+    
+        <section id="experience" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-500">
+         <div class="container mx-auto px-6">
+               <div class="text-center mb-16">
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">My professional journey</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+      
+      <!-- Backend Developer -->
+      <div class="experience-card animate-on-scroll flex flex-col h-full">
+        <div class="bg-gradient-to-br from-blue-500 to-blue-700 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-white relative overflow-hidden h-full flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+          <div class="relative z-10 flex flex-col h-full">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-briefcase text-2xl"></i>
+                </div>
+                <div>
+                  <span class="text-sm opacity-80">03/2024 - Present</span>
+                  <h3 class="text-xl font-bold">Backend Developer</h3>
+                </div>
+              </div>
+
+              <h4 class="text-lg font-semibold mb-4 text-blue-100">Tech Mahindra Ltd.</h4>
+
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-blue-200"></i>
+                  <span class="text-sm">Working in the insurance domain, specifically managing and processing claims using GraphTalk.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-blue-200"></i>
+                  <span class="text-sm">Handling exceptions and resolving system issues by analyzing data and implementing solutions in Oracle Database and GraphTalk.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-blue-200"></i>
+                  <span class="text-sm">Ensuring smooth claims processing by troubleshooting errors, optimizing queries, and maintaining data integrity.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-blue-200"></i>
+                  <span class="text-sm">Collaborating with cross-functional teams to enhance system performance and improve claim management workflows.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Spring Boot</span>
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">AWS</span>
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Java Full Stack Intern -->
+      <div class="experience-card animate-on-scroll flex flex-col h-full">
+        <div class="bg-gradient-to-br from-green-500 to-green-700 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-white relative overflow-hidden h-full flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+          <div class="relative z-10 flex flex-col h-full">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-code text-2xl"></i>
+                </div>
+                <div>
+                  <span class="text-sm opacity-80">09/2023 - 03/2024</span>
+                  <h3 class="text-xl font-bold">Java Full Stack Intern</h3>
+                </div>
+              </div>
+
+              <h4 class="text-lg font-semibold mb-4 text-green-100">Odisha Upskilling and Placement Programme</h4>
+
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-green-200"></i>
+                  <span class="text-sm">Completed a Foundational Course covering C, Data Structures, Linux, Shell Scripting, Cloud Computing, Python, DBMS, and Web Technologies.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-green-200"></i>
+                  <span class="text-sm">Developed strong soft skills, including communication, teamwork, and problem-solving.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-green-200"></i>
+                  <span class="text-sm">Specialized in Java Full Stack Development, focusing on backend (Java, Spring Boot) and frontend (Angular, HTML, CSS, JavaScript).</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-green-200"></i>
+                  <span class="text-sm">Gained hands-on experience in database management, API development, cloud technologies and by creating multiple projects.</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-green-200"></i>
+                  <span class="text-sm">Learned industry best practices and agile methodologies for efficient software development.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Java</span>
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">MySQL</span>
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">React</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Junior Software Developer -->
+      <div class="experience-card animate-on-scroll flex flex-col h-full">
+        <div class="bg-gradient-to-br from-purple-500 to-purple-700 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-white relative overflow-hidden h-full flex flex-col justify-between">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+          <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+
+          <div class="relative z-10 flex flex-col h-full">
+            <div>
+              <div class="flex items-center mb-6">
+                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                  <i class="fas fa-rocket text-2xl"></i>
+                </div>
+                <div>
+                  <span class="text-sm opacity-80">2018 - 2020</span>
+                  <h3 class="text-xl font-bold">Junior Software Developer</h3>
+                </div>
+              </div>
+
+              <h4 class="text-lg font-semibold mb-4 text-purple-100">StartupTech</h4>
+
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-purple-200"></i>
+                  <span class="text-sm">Built responsive web applications</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-purple-200"></i>
+                  <span class="text-sm">Worked with agile methodologies</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-purple-200"></i>
+                  <span class="text-sm">Participated in code reviews</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle mr-3 mt-1 text-purple-200"></i>
+                  <span class="text-sm">Learned enterprise practices</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-auto">
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">JavaScript</span>
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">HTML/CSS</span>
+              <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+   <!-- Education Section -->
+   
+<section id="education" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">My academic background</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+      
+      <!-- MCA Card -->
+      <div class="education-card animate-on-scroll flex flex-col h-full">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full justify-between">
+          <div>
+            <div class="text-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-user-graduate text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Master of Computer Application</h3>
+              <h4 class="text-lg text-blue-600 dark:text-blue-400">Computer Science & Engineering</h4>
+            </div>
+            <div class="space-y-2 text-center">
+              <p class="text-gray-600 dark:text-gray-400">Centurion University of Technology and Management, Bhubaneswar</p>
+              <p class="text-gray-600 dark:text-gray-400">2021 - 2023</p>
+              <p class="text-sm text-gray-500 dark:text-gray-500">CGPA: 9.7/10</p>
+            </div>
+            <div class="mt-6">
+              <h5 class="font-semibold text-gray-800 dark:text-white mb-2">Key Subjects:</h5>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Data Structures</span>
+                <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Algorithms</span>
+                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Database Systems</span>
+                <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">Software Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BSc Card -->
+      <div class="education-card animate-on-scroll flex flex-col h-full">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full justify-between">
+          <div>
+            <div class="text-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-white">BSc in Information Technology</h3>
+              <h4 class="text-lg text-blue-600 dark:text-blue-400">Computer Science & Engineering</h4>
+            </div>
+            <div class="space-y-2 text-center">
+              <p class="text-gray-600 dark:text-gray-400">Centurion University of Technology and Management, Bhubaneswar</p>
+              <p class="text-gray-600 dark:text-gray-400">2018 - 2021</p>
+              <p class="text-sm text-gray-500 dark:text-gray-500">CGPA: 9.2/10</p>
+            </div>
+            <div class="mt-6">
+              <h5 class="font-semibold text-gray-800 dark:text-white mb-2">Key Subjects:</h5>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Data Structures</span>
+                <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Algorithms</span>
+                <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Database Systems</span>
+                <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">Software Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications Card -->
+      <div class="education-card animate-on-scroll flex flex-col h-full">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full justify-between">
+          <div>
+            <div class="text-center mb-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-certificate text-white text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Certifications</h3>
+              <h4 class="text-lg text-green-600 dark:text-green-400">Professional Development</h4>
+            </div>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h5 class="font-semibold text-gray-800 dark:text-white">AWS Certified Solutions Architect</h5>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Amazon Web Services</p>
+              </div>
+              <div class="border-l-4 border-green-500 pl-4">
+                <h5 class="font-semibold text-gray-800 dark:text-white">Oracle Certified Java Developer</h5>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Oracle Corporation</p>
+              </div>
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h5 class="font-semibold text-gray-800 dark:text-white">Spring Professional Certification</h5>
+                <p class="text-sm text-gray-600 dark:text-gray-400">VMware</p>
+              </div>
+              <div class="border-l-4 border-red-500 pl-4">
+                <h5 class="font-semibold text-gray-800 dark:text-white">Kubernetes Administrator</h5>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Cloud Native Computing Foundation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Achievements Section -->
+<section id="achievements" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="section-title">Achievements</h2>
+      <p class="section-subtitle">Recognition and awards</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 2025 -->
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/git-certificate.jpg" alt="Git and GitHub" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Git And GitHub</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Completed a comprehensive course covering version control fundamentals, advanced Git workflows, GitHub collaboration techniques, and best practices for software development projects.</p>
+          <span class="inline-block px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full text-sm">2025</span>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/google-generative-ai.png" alt="Generative AI" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Google Generative AI</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Completed foundational training on generative AI concepts, including LLMs, tuning, responsible AI practices, and applications of Google’s generative AI.</p>
+          <span class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">2024</span>
+        </div>
+      </div>
+
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/gold-medalist.jpg" alt="Gold Medal" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Gold Medalist</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Awarded for securing the highest mark in MCA, received from the Honorable Governor of Odisha and a Supreme Court Judge.</p>
+          <span class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">2024</span>
+        </div>
+      </div>
+
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/oupp-gold-medlist.jpg" alt="Gold Medal OUPP" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Gold Medalist</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Recognized for exceptional performance in the Java Full Stack Foundation course by the Government of Odisha.</p>
+          <span class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">2024</span>
+        </div>
+      </div>
+
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/java-functional-programming.jpg" alt="Java Functional" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Java Functional Programming</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Specialized course on functional programming in Java using lambda, stream API, and functional interfaces.</p>
+          <span class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">2024</span>
+        </div>
+      </div>
+
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/google-cloud-fundamentals.png" alt="Google Cloud" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Google Cloud Fundamentals</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Studied core GCP services, infrastructure, storage, and cloud operations through an in-depth training course.</p>
+          <span class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">2024</span>
+        </div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/cloud-security.jpg" alt="Cloud Security AWS" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Cloud Security Foundations — AWS Academy</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Completed AWS course on cloud security: IAM, encryption, compliance, and securing AWS infrastructure.</p>
+          <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">2023</span>
+        </div>
+      </div>
+
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/cyb-essen.jpg" alt="Cybersecurity Cisco" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Cybersecurity Essentials — Cisco</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Covered threat analysis, cryptography, and network security as part of Cisco’s cybersecurity curriculum.</p>
+          <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">2023</span>
+        </div>
+      </div>
+
+      <div class="achievement-card animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+          <img src="https://rituparnaparija.github.io/portfolio-website/assets/img/achievement/azure-fundamentals.png" alt="Azure Fundamentals" class="w-full h-48 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Microsoft Azure Fundamentals (AZ-900)</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Validates foundational cloud knowledge including Azure services, workloads, and security.</p>
+          <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">2023</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+   <!-- Projects Section -->
+<section id="projects" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-500">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="section-title">University Projects</h2>
+      <p class="section-subtitle">Academic and personal projects</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Web Application -->
+      <div class="project-card animate-on-scroll">
+        <div class="bg-gradient-to-br from-indigo-500 to-blue-600 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-white">
+          <div class="mb-4">
+            <i class="fas fa-network-wired text-3xl mb-2"></i>
+            <h3 class="text-xl font-bold">Order Workflow Web Application</h3>
+          </div>
+          <p class="mb-4 opacity-90">Streamlined real-time order entry, tracking, and fulfillment using Spring Boot, JSP, and Spring Data JPA. Integrated Spring Security for secure authentication and role-based access.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">Spring Boot</span>
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">JSP</span>
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- District Employment Exchange -->
+      <div class="project-card animate-on-scroll">
+        <div class="bg-gradient-to-br from-green-600 to-teal-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-white">
+          <div class="mb-4">
+            <i class="fas fa-briefcase text-3xl mb-2"></i>
+            <h3 class="text-xl font-bold">District Employment Exchange</h3>
+          </div>
+          <p class="mb-4 opacity-90">Backend built with Spring Boot and RESTful APIs; frontend in Angular. Manages job listings, profiles, and applications via Spring Data JPA integration.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">Angular</span>
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">Spring Boot</span>
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Restaurant Reservation System -->
+      <div class="project-card animate-on-scroll">
+        <div class="bg-gradient-to-br from-red-500 to-yellow-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-white">
+          <div class="mb-4">
+            <i class="fas fa-utensils text-3xl mb-2"></i>
+            <h3 class="text-xl font-bold">Restaurant Reservation System</h3>
+          </div>
+          <p class="mb-4 opacity-90">Developed using Java Servlets and JSP. Facilitates online table booking and reservation management for restaurant staff and customers.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">Java Servlet</span>
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">JSP</span>
+            <span class="px-2 py-1 bg-white/20 rounded text-sm">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-500">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Let's discuss your next project</p>
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12">
+            <div class="animate-on-scroll">
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Contact Information</h3>
+              <div class="space-y-6">
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-envelope text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">Email</h4>
+                    <p class="text-gray-600 dark:text-gray-400">parijarituparna@gmail.com</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-phone text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">Phone</h4>
+                    <p class="text-gray-600 dark:text-gray-400">+91-8457047744</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white">Location</h4>
+                    <p class="text-gray-600 dark:text-gray-400">Mumbai, India</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-8">
+                <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">Follow Me</h4>
+                <div class="flex space-x-4">
+                  <a href="https://www.linkedin.com/in/rituparna-parija/?originalSubdomain=in" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a href="https://github.com/RituparnaParija" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="animate-on-scroll">
+              <form class="space-y-6" id="contact-form">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                  <input type="text" id="name" name="name" required 
+                         class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-all duration-200">
+                </div>
+                
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                  <input type="email" id="email" name="email" required 
+                         class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-all duration-200">
+                </div>
+                
+                <div>
+                  <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                  <input type="text" id="subject" name="subject" required 
+                         class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-all duration-200">
+                </div>
+                
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                  <textarea id="message" name="message" rows="5" required 
+                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white transition-all duration-200"></textarea>
+                </div>
+                
+                <button type="submit" 
+                        class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6 text-center">
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+            Rituparna Parija
+          </h3>
+          <p class="text-gray-400 max-w-md mx-auto">
+            Java Full Stack Developer passionate about creating innovative solutions and building scalable applications.
+          </p>
+        </div>
+        
+        <div class="flex justify-center space-x-6 mb-8">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8">
+          <p class="text-gray-400">
+            © 2025 Rituparna. All rights reserved. Built with ❤️ using HTML, CSS, Tailwind & JavaScript.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

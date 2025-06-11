@@ -145,7 +145,12 @@ class RocketLaunchManager {
     if (this.isAnimating) return;
     
     this.isAnimating = true;
-    
+    //rocket sound
+    const rocketSound = document.getElementById('rocket-sound');
+  if (rocketSound) {
+    rocketSound.currentTime = 0;
+    rocketSound.play().catch(err => console.warn('Audio play failed:', err));
+  }
     // Get profile photo position
     const photoRect = this.profilePhoto.getBoundingClientRect();
     const startX = photoRect.left + photoRect.width / 2;
@@ -157,7 +162,7 @@ class RocketLaunchManager {
     // Position rocket at profile photo
     this.rocket.style.left = `${startX}px`;
     this.rocket.style.top = `${startY}px`;
-    this.rocket.style.transform = 'rotate(-45deg) scale(1)';
+    this.rocket.style.transform = 'rotate(135deg) scale(1)';
     
     // Create trail effect
     this.createTrailEffect();
@@ -201,7 +206,7 @@ class RocketLaunchManager {
     this.rocket.style.transition = 'all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
     this.rocket.style.left = `${targetX}px`;
     this.rocket.style.top = `${targetY}px`;
-    this.rocket.style.transform = 'rotate(-45deg) scale(1.5)';
+    this.rocket.style.transform = 'rotate(135deg) scale(1.5)';
     
     // Start auto-scroll to contact section
     setTimeout(() => {
@@ -220,7 +225,14 @@ class RocketLaunchManager {
   showBlastEffect() {
     // Hide rocket
     this.rocketContainer.classList.add('hidden');
+    //blast effect
+    const blastSound = document.getElementById('blast-sound');
+    if (blastSound) {
+      blastSound.currentTime = 0;
+      blastSound.play().catch(err => console.warn('Blast sound failed:', err));
+    }
     
+
     // Show blast modal
     this.blastModal.classList.remove('hidden');
     this.blastModal.classList.add('flex');

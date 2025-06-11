@@ -104,6 +104,151 @@ class NavigationManager {
   }
 }
 
+// Rocket Launch Animation Manager
+class RocketLaunchManager {
+  constructor() {
+    this.profilePhoto = document.getElementById('profile-photo');
+    this.rocketContainer = document.getElementById('rocket-container');
+    this.rocket = document.getElementById('rocket');
+    this.rocketTrail = document.getElementById('rocket-trail');
+    this.blastModal = document.getElementById('blast-modal');
+    this.blastContent = document.getElementById('blast-content');
+    this.closeBlast = document.getElementById('close-blast');
+    this.isAnimating = false;
+    this.init();
+  }
+
+  init() {
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    if (this.profilePhoto) {
+      this.profilePhoto.addEventListener('click', () => this.launchRocket());
+    }
+
+    if (this.closeBlast) {
+      this.closeBlast.addEventListener('click', () => this.closeBlastModal());
+    }
+
+    // Close modal on backdrop click
+    if (this.blastModal) {
+      this.blastModal.addEventListener('click', (e) => {
+        if (e.target === this.blastModal) {
+          this.closeBlastModal();
+        }
+      });
+    }
+  }
+
+  launchRocket() {
+    if (this.isAnimating) return;
+    
+    this.isAnimating = true;
+    
+    // Get profile photo position
+    const photoRect = this.profilePhoto.getBoundingClientRect();
+    const startX = photoRect.left + photoRect.width / 2;
+    const startY = photoRect.top + photoRect.height / 2;
+    
+    // Show rocket container
+    this.rocketContainer.classList.remove('hidden');
+    
+    // Position rocket at profile photo
+    this.rocket.style.left = `${startX}px`;
+    this.rocket.style.top = `${startY}px`;
+    this.rocket.style.transform = 'rotate(-45deg) scale(1)';
+    
+    // Create trail effect
+    this.createTrailEffect();
+    
+    // Animate rocket launch
+    setTimeout(() => {
+      this.animateRocketFlight();
+    }, 100);
+  }
+
+  createTrailEffect() {
+    // Create multiple trail particles
+    for (let i = 0; i < 10; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'absolute w-2 h-2 bg-orange-400 rounded-full opacity-70';
+      particle.style.left = this.rocket.style.left;
+      particle.style.top = this.rocket.style.top;
+      this.rocketContainer.appendChild(particle);
+      
+      // Animate particles
+      setTimeout(() => {
+        particle.style.transition = 'all 0.5s ease-out';
+        particle.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) scale(0)`;
+        particle.style.opacity = '0';
+        
+        setTimeout(() => {
+          particle.remove();
+        }, 500);
+      }, i * 50);
+    }
+  }
+
+  animateRocketFlight() {
+    // Calculate target position (contact section)
+    const contactSection = document.getElementById('contact');
+    const contactRect = contactSection.getBoundingClientRect();
+    const targetX = contactRect.left + contactRect.width / 2;
+    const targetY = contactRect.top + contactRect.height / 2;
+    
+    // Animate rocket to target
+    this.rocket.style.transition = 'all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    this.rocket.style.left = `${targetX}px`;
+    this.rocket.style.top = `${targetY}px`;
+    this.rocket.style.transform = 'rotate(-45deg) scale(1.5)';
+    
+    // Start auto-scroll to contact section
+    setTimeout(() => {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }, 500);
+    
+    // Show blast effect after rocket reaches target
+    setTimeout(() => {
+      this.showBlastEffect();
+    }, 2000);
+  }
+
+  showBlastEffect() {
+    // Hide rocket
+    this.rocketContainer.classList.add('hidden');
+    
+    // Show blast modal
+    this.blastModal.classList.remove('hidden');
+    this.blastModal.classList.add('flex');
+    
+    // Animate blast content
+    setTimeout(() => {
+      this.blastContent.style.transform = 'scale(1)';
+    }, 100);
+    
+    // Add screen shake effect
+    document.body.style.animation = 'shake 0.5s ease-in-out';
+    
+    setTimeout(() => {
+      document.body.style.animation = '';
+    }, 500);
+  }
+
+  closeBlastModal() {
+    this.blastContent.style.transform = 'scale(0)';
+    
+    setTimeout(() => {
+      this.blastModal.classList.add('hidden');
+      this.blastModal.classList.remove('flex');
+      this.isAnimating = false;
+    }, 300);
+  }
+}
+
 // Animation Manager
 class AnimationManager {
   constructor() {
@@ -242,7 +387,11 @@ class ContactManager {
     });
   }
 
-  
+  downloadResume() {
+    // In a real application, this would trigger a resume download
+    alert('Resume download feature will be implemented with actual resume file.');
+  }
+
   scrollToContact() {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -300,12 +449,13 @@ class App {
     try {
       new ThemeManager();
       new NavigationManager();
+      new RocketLaunchManager(); // New rocket launch feature
       new AnimationManager();
       new EffectsManager();
       new ContactManager();
       new PerformanceMonitor();
       
-      console.log('Portfolio application initialized successfully');
+      console.log('Portfolio application with rocket launch feature initialized successfully');
     } catch (error) {
       console.error('Error initializing application:', error);
     }
@@ -316,4 +466,4 @@ class App {
 new App();
 
 // Export for potential testing
-export { ThemeManager, NavigationManager, AnimationManager, EffectsManager };
+export { ThemeManager, NavigationManager, AnimationManager, EffectsManager, RocketLaunchManager };

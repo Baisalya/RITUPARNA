@@ -137,6 +137,120 @@
   }
 }
 
+/* Rocket Launch Animation Keyframes */
+@keyframes rocketLaunch {
+  0% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(-45deg) scale(1.5);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* Rocket Trail Effects */
+.rocket-trail-particle {
+  animation: trailFade 0.5s ease-out forwards;
+}
+
+/* Blast Effect Styles */
+#blast-modal {
+  backdrop-filter: blur(8px);
+}
+
+#blast-content {
+  animation: blastAppear 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes blastAppear {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Enhanced Profile Photo Hover Effect */
+#profile-photo {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+#profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+#profile-photo:active {
+  transform: scale(0.98);
+}
+
+/* Add glow effect on hover */
+#profile-photo:hover::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* 3D Effects */
 .skill-card:hover {
   transform: translateY(-8px) rotateX(5deg);
@@ -159,6 +273,10 @@
   
   .hero-content h2 {
     @apply text-xl;
+  }
+  
+  #rocket {
+    font-size: 3rem;
   }
 }
 
@@ -183,3 +301,18 @@
 .dark ::-webkit-scrollbar-track {
   background: #374151;
 }
+
+/* Additional sparkle effects for rocket launch */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ffd700;
+  border-radius: 50%;
+  animation: sparkle 1s ease-in-out infinite;
+}
+
+.sparkle:nth-child(2) { animation-delay: 0.2s; }
+.sparkle:nth-child(3) { animation-delay: 0.4s; }
+.sparkle:nth-child(4) { animation-delay: 0.6s; }
+.sparkle:nth-child(5) { animation-delay: 0.8s; }
